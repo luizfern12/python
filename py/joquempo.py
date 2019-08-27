@@ -1,37 +1,71 @@
 from random import randint
 from time import sleep
-def QuemGanhou(cpu,cpu1):
+itens = ("Pedra", "Papel", "Tesoura")
+def QuemGanhou(cpu,player):
+
+  def QuemJogouOque(cpu,player):
+   print()
+   print("Cpu jogou " + itens[cpu])
+   print()
+   print("Player jogou " + itens[player])
+   print()
+
   if cpu == 0: # cpu pedra
-    if cpu1 == 0: # player pedra
+    if player == 0: # player pedra
       print("Empate")
-    elif cpu1 == 1: # player papel
+      QuemJogouOque(cpu,player)
+    
+    elif player == 1: # player papel
       print("Player vence")
-    elif cpu1 == 2: # player tesoura
+      QuemJogouOque(cpu,player)
+   
+    elif player == 2: # player tesoura
       print("Cpu vence")
+      QuemJogouOque(cpu,player)
+
     else:
-      print("Jogada invalida")
+      print("jogada invalida")
+      print("")
+      print("ninguem ganhou")
+
 
   elif cpu == 1: # cpu papel
-    if cpu1 == 0: # player pedra
+    if player == 0: # player pedra
       print("Cpu vence")
-    elif cpu1 == 1: # player papel
+      QuemJogouOque(cpu,player)
+      
+    elif player == 1: # player papel
       print("Empate")
-    elif cpu1 == 2: # player tesoura
+      QuemJogouOque(cpu,player)
+     
+    elif player == 2: # player tesoura
       print("Player vence")
+      QuemJogouOque(cpu,player)
+
     else:
-      print("Jogada invalida")
+      print("jogada invalida")
+      print("")
+      print("ninguem ganhou")
+
 
   elif cpu == 2: # cpu tesoura
-    if cpu1 == 0: # player pedra
+    if player == 0: # player pedra
       print("Player Vence")
-    elif cpu1 == 1: # player papel
+      QuemJogouOque(cpu,player)
+
+    elif player == 1: # player papel
       print("Cpu vence")
-    elif cpu1 == 2: # player tesoura
-      print("Empate") 
+      QuemJogouOque(cpu,player)
+
+    elif player == 2: # player tesoura
+      print("Empate")
+      QuemJogouOque(cpu,player)
+   
     else:
-      print("Jogada invalida")
-      
-itens = ("Pedra", "Papel", "Tesoura")
+      print("jogada invalida")
+      print("")
+      print("ninguem ganhou")
+
 while True:
   print('''
   Suas opcoes:
@@ -42,25 +76,19 @@ while True:
   [ 3 ] Sair
   ''')
 
-  player = int(input("qual a sua escolha? "))
+  player = int(input("qual a sua escolha?:"))
   
   if player == 3:
   	break
-  
+
   cpu = int(randint(0, 2))
 
   print()
   print("Jo")
   sleep(1)
-  print("Kem")
+  print("Quem")
   sleep(1)
   print("Po")
   print()
 
   QuemGanhou(cpu,player)
-                                                
-  print()
-  print("Cpu jogou " + itens[cpu])
-  print()
-  print("Player jogou " + itens[player])
-  print()
