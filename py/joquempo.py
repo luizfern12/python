@@ -4,11 +4,11 @@ itens = ("Pedra", "Papel", "Tesoura")
 def QuemGanhou(cpu,player):
 
   def QuemJogouOque(cpu,player):
-   print()
+   print("")
    print("Cpu jogou " + itens[cpu])
-   print()
+   print("")
    print("Player jogou " + itens[player])
-   print()
+   print("")
 
   if cpu == 0: # cpu pedra
     if player == 0: # player pedra
@@ -83,12 +83,12 @@ while True:
 
   cpu = int(randint(0, 2))
 
-  print()
+  print("")
   print("Jo")
   sleep(1)
   print("Quem")
   sleep(1)
   print("Po")
-  print()
+  print("")
 
   QuemGanhou(cpu,player)
